@@ -5,4 +5,7 @@ pipeline:
       - echo 'hola'
       - sleep 5
       - echo 'senior'
-
+  loadtest:
+    image: ubuntu
+    commands:
+      - seq 3 | xargs -P0 -n1 timeout 30 md5sum /dev/zero
