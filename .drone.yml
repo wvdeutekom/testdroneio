@@ -31,7 +31,7 @@ pipeline:
       - uname -r
       - echo Parallel loadtesting
       - seq 3 | xargs -P0 -n1 timeout 10 md5sum /dev/zero || echo hi
-  loadtest3:
+  loadtest4:
     image: ubuntu
     group: loadtest
     commands:
@@ -39,7 +39,7 @@ pipeline:
       - uname -r
       - echo Parallel loadtesting
       - seq 3 | xargs -P0 -n1 timeout 10 md5sum /dev/zero || echo hi
-  loadtest3:
+  loadtest5:
     image: ubuntu
     group: loadtest
     commands:
