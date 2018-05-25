@@ -8,4 +8,4 @@ pipeline:
   loadtest:
     image: ubuntu
     commands:
-      - seq 3 | xargs -P0 -n1 timeout 30 md5sum /dev/zero
+      - seq 3 | xargs -P0 -n1 timeout 30 md5sum /dev/zero || echo hi
