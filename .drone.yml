@@ -4,7 +4,7 @@ pipeline:
     commands:
       - echo 'hola'
       - sleep 5
-      - echo 'senior'
+      - echo 'senior.'
   loadtest:
     image: ubuntu
     commands:
