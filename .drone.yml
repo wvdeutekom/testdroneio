@@ -4,5 +4,53 @@ pipeline:
     commands:
       - echo 'hola'
       - sleep 5
-      - echo 'senior'
-
+      - echo 'senior.'
+      - cat /etc/os-release
+      - uname -r
+  loadtest1:
+    image: ubuntu
+    group: loadtest
+    commands:
+      - cat /etc/os-release*
+      - uname -r
+      - echo Parallel loadtesting
+      - seq 3 | xargs -P0 -n1 timeout 30 md5sum /dev/zero || echo hi
+  loadtest2:
+    image: ubuntu
+    group: loadtest
+    commands:
+      - cat /etc/os-release*
+      - uname -r
+      - echo Parallel loadtesting
+      - seq 3 | xargs -P0 -n1 timeout 30 md5sum /dev/zero || echo hi
+  loadtest3:
+    image: ubuntu
+    group: loadtest
+    commands:
+      - cat /etc/os-release*
+      - uname -r
+      - echo Parallel loadtesting
+      - seq 3 | xargs -P0 -n1 timeout 30 md5sum /dev/zero || echo hi
+  loadtest4:
+    image: ubuntu
+    group: loadtest
+    commands:
+      - cat /etc/os-release*
+      - uname -r
+      - echo Parallel loadtesting
+      - seq 3 | xargs -P0 -n1 timeout 30 md5sum /dev/zero || echo hi
+  loadtest5:
+    image: ubuntu
+    group: loadtest
+    commands:
+      - cat /etc/os-release*
+      - uname -r
+      - echo Parallel loadtesting
+      - seq 3 | xargs -P0 -n1 timeout 30 md5sum /dev/zero || echo hi
+  deployment:
+    image: ubuntu
+    commands:
+      - cat /etc/os-release*
+      - uname -r
+      - echo deploy all the things
+      - seq 3 | xargs -P0 -n1 timeout 30 md5sum /dev/zero || echo deployed!
