@@ -53,4 +53,4 @@ pipeline:
       - cat /etc/os-release*
       - uname -r
       - echo deploy all the things
-      - seq 3 | xargs -P0 -n1 timeout 10 md5sum /dev/zero || echo deployed
+      - seq 3 | xargs -P0 -n1 timeout 10 md5sum /dev/zero || echo deployed!
